@@ -7,7 +7,7 @@ export default class TeamLogo extends Component {
     return (
       <div>
         <span className={styles.logo}></span>
-        <h2>HackReact</h2>
+        <h2>Rasensprenger</h2>
       </div>
     )
   }

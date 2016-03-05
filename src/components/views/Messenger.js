@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import TeamLogo from '../elements/TeamLogo'
 import Profile from '../elements/Profile'
 import ListChannelsBtn from '../elements/ListChannelsBtn'
 import JoinedChannelList from '../elements/JoinedChannelList'
@@ -18,6 +19,7 @@ export default class Messenger extends Component {
     return (
       <div className={styles.container}>
         <div className={styles.nav}>
+          <TeamLogo />
           <Profile />
           <ListChannelsBtn />
           <JoinedChannelList />
