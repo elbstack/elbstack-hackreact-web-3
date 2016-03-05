@@ -19,7 +19,6 @@ export default class Messenger extends Component {
   }
 
   onChannelList() {
-    debugger
     this.setState({
       channelListOpen: !this.state.channelListOpen
     })
