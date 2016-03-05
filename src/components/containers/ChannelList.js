@@ -26,7 +26,7 @@ export default class ChannelList extends Component {
 
     const content = this.props.channels !== undefined && this.props.channels.list !== undefined ?
       <ul>
-        { Object.keys(this.props.channels.list).map( (channelId) => <li key={channelId} onClick={this.onJoinChannel.bind(this, channelId)}>{this.props.channels.list[channelId].name} ({this.props.channels.list[channelId].member_count}</li> )}
+        { Object.keys(this.props.channels.list).map( (channelId) => <li key={channelId} onClick={this.onJoinChannel.bind(this, channelId)}>{this.props.channels.list[channelId].name} ({this.props.channels.list[channelId].member_count})</li> )}
       </ul>
       : <p>Lade Channels</p>
 
