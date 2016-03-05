@@ -4,6 +4,7 @@ import SendbirdConnect from '../containers/SendbirdConnect'
 import styles from './Home.scss'
 
 export default class Home extends Component {
+
   render() {
     return (
       <Grid>
