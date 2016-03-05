@@ -23,8 +23,12 @@
       padding: 8px;
     }
 
+    li:active {
+      background: $brand-primary !important;
+    }
+
     li:hover {
-      background: $brand-primary;
+      background: $brand-secondary;
       color: white;
       cursor: pointer;
     }
