@@ -15,7 +15,7 @@ export default class Profile extends React.Component {
       <nav className="text-center">
         <div className={styles.userContainer}>
           <span className={styles.user}>
-            <p>{this.props.user_name}</p>
+            <span>{this.props.user_name}</span>
             <IndexLink to="/" className={styles.signout} />
           </span>
         </div>
