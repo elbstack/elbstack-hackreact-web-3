@@ -1,4 +1,4 @@
-import { SENDBIRD_LIST_CHANNELS, SENDBIRD_LIST_CHANNELS_ERROR } from '../actionTypes'
+import { SENDBIRD_LIST_CHANNELS, SENDBIRD_LIST_CHANNELS_ERROR, JOIN_CHANNEL } from '../actionTypes'
 import sendbird from 'sendbird'
 
 export function listChannels() {
@@ -22,6 +22,15 @@ export function listChannels() {
           error: error
         })
       }
+    })
+  }
+}
+
+export function joinChannel(channelId) {
+  return dispatch => {
+    dispatch({
+      type: JOIN_CHANNEL,
+      channelId
     })
   }
 }

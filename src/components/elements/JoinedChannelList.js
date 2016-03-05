@@ -1,6 +1,12 @@
 import React, { Component } from 'react'
 import styles from './JoinedChannelList.scss'
+import { connect } from 'react-redux'
 
+@connect(
+  state => ({
+    channels: state.channels,
+  })
+)
 export default class JoinedChannelList extends Component {
 
   render() {
