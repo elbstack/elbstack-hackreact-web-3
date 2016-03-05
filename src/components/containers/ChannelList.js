@@ -19,7 +19,11 @@ export default class ChannelList extends Component {
 
   render() {
 
-    const content = this.props.channels !== undefined ? <p>Channels gefunden</p> : <p>Lade Channels</p>
+    const content = this.props.channels !== undefined && this.props.channels.list !== undefined ?
+      <ul>
+        { Object.keys(this.props.channels.list).map( (key) => <li key={key}>{this.props.channels.list[key].name}</li> )}
+      </ul>
+      : <p>Lade Channels</p>
 
     return (
       <div className={styles.container}>
