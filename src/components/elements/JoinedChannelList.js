@@ -11,7 +11,11 @@ export default class JoinedChannelList extends Component {
 
   render() {
 
-    const content = <span>no joined channels</span>
+    const content = this.props.channels.joined !== undefined ?
+      <ul>
+        { this.props.channels.joined.map( (channelId) => <li key={channelId}>{this.props.channels.list[channelId].name} ({this.props.channels.list[channelId].member_count})</li> )}
+      </ul>
+      : <span>no joined channels</span>
 
     return (
       <div className={styles.container}>
