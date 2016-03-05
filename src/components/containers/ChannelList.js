@@ -4,6 +4,7 @@ import styles from './ChannelList.scss'
 import { listChannels } from '../../redux/actions/channels'
 
 @connect(
+  null,
   dispatch => ({
     listChannels: () => dispatch(listChannels())
   })
