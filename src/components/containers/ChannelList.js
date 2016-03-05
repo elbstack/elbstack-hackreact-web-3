@@ -4,7 +4,9 @@ import styles from './ChannelList.scss'
 import { listChannels } from '../../redux/actions/channels'
 
 @connect(
-  null,
+  state => ({
+    channels: state.channels
+  }),
   dispatch => ({
     listChannels: () => dispatch(listChannels())
   })
@@ -17,7 +19,7 @@ export default class ChannelList extends Component {
 
   render() {
 
-    const content = <p>Lade Channels</p>
+    const content = this.props.channels !== undefined ? <p>Channels gefunden</p> : <p>Lade Channels</p>
 
     return (
       <div className={styles.container}>
