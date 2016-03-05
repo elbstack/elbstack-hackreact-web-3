@@ -1,4 +1,4 @@
-import { SENDBIRD_CONNECT, SENDBIRD_CONNECT_ERROR, SENDBIRD_CONNECTED, SENDBIRD_SET_USER } from '../actionTypes'
+import { SENDBIRD_CONNECT, SENDBIRD_CONNECT_ERROR, SENDBIRD_CONNECTED, SENDBIRD_SET_USER, SENDBIRD_JOIN_CHANNEL } from '../actionTypes'
 import sendbird from 'sendbird'
 import uuid from 'node-uuid'
 
@@ -68,5 +68,39 @@ export function connectSendbird(user) {
     if (shouldConnect(state)) {
       return dispatch(requestConnect(state.sendbird.app_id, getGuestId(), user))
     }
+  }
+}
+
+export function joinChannelSendbird(channelUrl) {
+
+  return dispatch => {
+    dispatch({
+      type: SENDBIRD_JOIN_CHANNEL,
+      channelUrl
+    })
+
+    sendbird.joinChannel(
+      channelUrl,
+      {
+        'successFunc': function(data) {
+          console.log(data)
+          sendbird.connect({
+            'successFunc': function(dataConnect) {
+              console.log(dataConnect)
+              // do something
+            },
+            'errorFunc': function(status, error) {
+              console.log(status, error)
+              // do something
+            }
+          })
+          // do something
+        },
+        'errorFunc': function(status, error) {
+          console.log(status, error)
+          // do something
+        }
+      }
+    )
   }
 }
