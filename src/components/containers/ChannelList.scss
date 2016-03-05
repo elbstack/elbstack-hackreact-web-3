@@ -14,6 +14,22 @@
   width: 200px;
   height: 100%;
   padding: 15px 0 0 0;
+
+  ul {
+    list-style: none;
+    padding-left: 0px;
+
+    li {
+      padding: 8px;
+    }
+
+    li:hover {
+      background: $brand-primary;
+      color: white;
+      cursor: pointer;
+    }
+  }
+
 }
 .item {
   cursor: pointer;
